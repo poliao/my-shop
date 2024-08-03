@@ -1,0 +1,41 @@
+.background-radial-gradient {
+    background: linear-gradient(25deg, #f8c368, #fa9292);
+}
+.rounded-image {
+    border-radius: 15px;
+    width: 90%;
+    height: 90%;
+}
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper input {
+    padding-right: 40px; /* Adjust padding to ensure space for the icon */
+}
+
+.input-icon {
+    position: absolute;
+    right: 10px; /* Adjust the distance from the right edge of the input */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px; /* Adjust the size of the icon */
+    height: auto; /* Ensure the icon maintains aspect ratio */
+}
+.custom-btn {
+    background-color: #F6428F; /* Replace with your desired background color */
+    border-color: #F6428F; /* Replace with your desired border color */
+    color: white; /* Text color */
+    font-size: 20px;
+    width: 120%;
+     /* Increase width to your preference */
+    max-width: 100px; /* Optional: Set a maximum width to prevent the button from becoming too wide */
+}
+
+.custom-btn:hover {
+    background-color: #F6428F; /* Darker shade for hover effect */
+    border-color: #F6428F; /* Darker border color on hover */
+    
+}
+
+/* Custom width for the button */
