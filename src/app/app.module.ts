@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MenuComponent } from './menu/menu.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
+import { AllproductComponent } from './allproduct/allproduct.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AddproductComponent } from './addproduct/addproduct.component';
     ForgotpasswordComponent,
     ChangepasswordComponent,
     MenuComponent,
-    AddproductComponent
+    AddproductComponent,
+    AllproductComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 .background-radial-gradient {
     background: linear-gradient(25deg, #FEE882, #F6488E);
+    
 }
 input[type="file"]::-webkit-file-upload-button {
     visibility: hidden;

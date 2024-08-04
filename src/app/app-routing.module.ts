@@ -5,13 +5,16 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { MenuComponent } from './menu/menu.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
+import { AllproductComponent } from './allproduct/allproduct.component';
 
 const routes: Routes = [
   { path: '',  component: LoginComponent}, 
   { path: 'forgotpassword', component: ForgotpasswordComponent},
   { path: 'changepassword', component: ChangepasswordComponent},
   { path: 'menu', component: MenuComponent},
-  { path: 'addproduct', component: AddproductComponent}
+  { path: 'addproduct', component: AddproductComponent},
+  { path: 'allproduct', component: AllproductComponent}
+
 
 ];
 

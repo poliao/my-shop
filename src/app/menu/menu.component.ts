@@ -17,7 +17,9 @@ export class MenuComponent {
     
   ) {}
   
-
+  goToallproduct(){
+    this.router.navigate(['/allproduct']);
+  }
 
   goToaddproduct(){
     this.router.navigate(['/addproduct']);
