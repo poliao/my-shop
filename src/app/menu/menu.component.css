@@ -1,0 +1,25 @@
+.background-radial-gradient {
+    background: linear-gradient(25deg, #FEE882, #F6488E);
+}
+
+.custom-btn {
+    background-color: #ffffff;
+    /* Replace with your desired background color */
+    border-color: #ffffff;
+    /* Replace with your desired border color */
+    color: rgb(0, 0, 0);
+    /* Text color */
+    font-size: 20px;
+    width: 100%;
+    /* Increase width to your preference */
+   
+    /* Optional: Set a maximum width to prevent the button from becoming too wide */
+}
+
+.custom-btn:hover {
+    background-color: #ffffff;
+    /* Darker shade for hover effect */
+    border-color: #ffffff;
+    /* Darker border color on hover */
+
+}

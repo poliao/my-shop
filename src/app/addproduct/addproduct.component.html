@@ -1,0 +1,64 @@
+<section class="background-radial-gradient overflow-hidden d-flex align-items-center justify-content-center" style="height: 100vh;">
+  <div class="container my-5">
+    <form  [formGroup]="productForm">
+      <!-- Card for Product Information -->
+      <div class="card mb-4">
+        <div class="card-body">
+          <h3 class="card-title">ข้อมูลสินค้า</h3>
+
+          <div class="form-group row mb-3">
+            <label for="product-image" class="col-sm-2 col-form-label">รูปภาพสินค้า</label>
+            <div class="col-sm-10">
+              <input *ngIf="!showimg" class="image-placeholder form-control-file" type="file" id="myfile" name="myfile" formControlName="image" (change)="onFileSelected($event)" >
+              <img *ngIf="imageSrc" [src]="imageSrc" alt="Selected Image" class="img-thumbnail mt-2" style="max-width: 98px; max-height: 98px;">
+              <button *ngIf="showimg" type="button" class="btn btn-danger mt-2" (click)="onRemoveImage()">เลือกภาพใหม่</button>
+            </div>
+          </div>
+
+          <div class="form-group row mb-3">
+            <label for="product-name" class="col-sm-2 col-form-label">ชื่อสินค้า</label>
+            <div class="col-sm-10">
+              <input type="text" id="product-name" class="custom-input form-control" formControlName="name">
+            </div>
+          </div>
+
+          
+        </div>
+      </div>
+
+      <!-- Card for Sale Information -->
+      <div class="card mb-4">
+        <div class="card-body">
+          <h3 class="card-title">ข้อมูลขาย</h3>
+
+          <div class="form-group row mb-3">
+            <label for="wholesale-price" class="col-sm-2 col-form-label">ราคาขายส่ง</label>
+            <div class="col-sm-10">
+              <input type="text" id="wholesale-price" class="custom-input form-control" formControlName="wholesalePrice">
+            </div>
+          </div>
+
+          <div class="form-group row mb-3">
+            <label for="retail-price" class="col-sm-2 col-form-label">ราคาขายปลีก</label>
+            <div class="col-sm-10">
+              <input type="text" id="retail-price" class="custom-input form-control" formControlName="retailPrice">
+            </div>
+          </div>
+
+          <div class="form-group row mb-3">
+            <label for="warehouse" class="col-sm-2 col-form-label">คลัง</label>
+            <div class="col-sm-10">
+              <input type="text" id="warehouse" class="custom-input form-control" formControlName="stock">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="d-flex align-items-center justify-content-between">
+        <img src="https://upcdn.io/FW25c9q/raw/icon/back-button.png" alt="Back" class="input-icon" (click)="goToBackmenu()">
+        <button type="button" (click)="onSubmit()" class="btn btn-primary custom-btn">บันทึกข้อมูล</button>
+      </div>
+    </form>
+  </div>
+</section>

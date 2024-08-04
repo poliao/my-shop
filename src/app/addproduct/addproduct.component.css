@@ -1,0 +1,45 @@
+.background-radial-gradient {
+    background: linear-gradient(25deg, #FEE882, #F6488E);
+}
+input[type="file"]::-webkit-file-upload-button {
+    visibility: hidden;
+    content: none;
+  }
+
+
+
+.image-placeholder {
+    background-color: #eee;
+    width: 98px;
+    height: 98px;
+    border-radius: 8px;
+  }
+.input-icon{
+    width: 50Px;
+    margin-left: 0px;
+}
+
+
+.custom-btn {
+    background-color: #F6428F; /* Replace with your desired background color */
+    border-color: #F6428F; /* Replace with your desired border color */
+    color: white; /* Text color */
+    font-size: 20px;
+    width: 20%;
+    margin-left: 0px;
+     /* Optional: Set a maximum width to prevent the button from becoming too wide */
+}
+
+.custom-btn:hover {
+    background-color: #F6428F; /* Darker shade for hover effect */
+    border-color: #1f1d1e; /* Darker border color on hover */
+    
+}
+
+.custom-input {
+    border: 2px solid #eee;
+    background-color: #eee;/* เพิ่มสีกรอบตามต้องการ */
+    border-radius: 5px; /* เพิ่มการทำให้มุมโค้งมน */
+  }
+
+/* Custom width for the button */

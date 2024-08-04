@@ -8,8 +8,7 @@ import { Router } from '@angular/router';
 })
 export class ForgotpasswordComponent {
   constructor(private router: Router) {}
-
-
+  
   goTochangepassword() {
     this.router.navigate(['/changepassword']);
   }
