@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AllproductService } from './allproduct.service';
 
 @Component({
   selector: 'app-allproduct',
@@ -9,40 +10,14 @@ import { Router } from '@angular/router';
 export class AllproductComponent implements OnInit {
   
 
-  products = [
-    { id: 1,  name: 'โค้ก', stock: 12, costPrice: 20, wholesalePrice: 29, retailPrice: 30 },
-    { id: 1,  name: 'โค้ก', stock: 12, costPrice: 20, wholesalePrice: 29, retailPrice: 30 },
-    { id: 1,  name: 'โค้ก', stock: 12, costPrice: 20, wholesalePrice: 29, retailPrice: 30 },
-    { id: 1,  name: 'โค้ก', stock: 12, costPrice: 20, wholesalePrice: 29, retailPrice: 30 },
-    { id: 1,  name: 'โค้ก', stock: 12, costPrice: 20, wholesalePrice: 29, retailPrice: 30 },
-    { id: 1,  name: 'โค้ก', stock: 12, costPrice: 20, wholesalePrice: 29, retailPrice: 30 },
-    { id: 1,  name: 'โค้ก', stock: 12, costPrice: 20, wholesalePrice: 29, retailPrice: 30 },
-    { id: 1,  name: 'โค้ก', stock: 12, costPrice: 20, wholesalePrice: 29, retailPrice: 30 },
-    { id: 1,  name: 'โค้ก', stock: 12, costPrice: 20, wholesalePrice: 29, retailPrice: 30 },
-    { id: 1,  name: 'โค้ก', stock: 12, costPrice: 20, wholesalePrice: 29, retailPrice: 30 },
-    { id: 1,  name: 'โค้ก', stock: 12, costPrice: 20, wholesalePrice: 29, retailPrice: 30 },
-    { id: 1,  name: 'โค้ก', stock: 12, costPrice: 20, wholesalePrice: 29, retailPrice: 30 },
-    { id: 1,  name: 'โค้ก', stock: 12, costPrice: 20, wholesalePrice: 29, retailPrice: 30 },
-    { id: 1,  name: 'โค้ก', stock: 12, costPrice: 20, wholesalePrice: 29, retailPrice: 30 },
-    { id: 1,  name: 'โค้ก', stock: 12, costPrice: 20, wholesalePrice: 29, retailPrice: 30 },
-    { id: 1,  name: 'โค้ก', stock: 12, costPrice: 20, wholesalePrice: 29, retailPrice: 30 },
-    { id: 1,  name: 'โค้ก', stock: 12, costPrice: 20, wholesalePrice: 29, retailPrice: 30 },
-    { id: 1,  name: 'โค้ก', stock: 12, costPrice: 20, wholesalePrice: 29, retailPrice: 30 },
-    { id: 1,  name: 'โค้ก', stock: 12, costPrice: 20, wholesalePrice: 29, retailPrice: 30 },
-    { id: 1,  name: 'โค้ก', stock: 12, costPrice: 20, wholesalePrice: 29, retailPrice: 30 },
-    { id: 1,  name: 'โค้ก', stock: 12, costPrice: 20, wholesalePrice: 29, retailPrice: 30 },
-    { id: 1,  name: 'โค้ก', stock: 12, costPrice: 20, wholesalePrice: 29, retailPrice: 30 },
-    { id: 1,  name: 'โค้ก', stock: 12, costPrice: 20, wholesalePrice: 29, retailPrice: 30 },
-    { id: 1,  name: 'โค้ก', stock: 12, costPrice: 20, wholesalePrice: 29, retailPrice: 30 },
-  
-    { id: 1,  name: 'โค้ก', stock: 12, costPrice: 20, wholesalePrice: 29, retailPrice: 30 },
+  products: any[] = [];
 
-  
-  ];
-
-  constructor(private router:Router) { }
+  constructor(private router:Router,
+              private allproductservice:AllproductService
+  ) { }
 
   ngOnInit(): void {
+    this.getAllProducts();
   }
 
   editProduct(product: any) {
@@ -53,6 +28,14 @@ export class AllproductComponent implements OnInit {
   deleteProduct(product: any) {
     console.log('Delete product:', product);
     // Add your delete logic here
+  }
+
+  getAllProducts(): void {
+    this.allproductservice.getAllProducts().subscribe(
+      (data) => {
+        this.products = data;
+      }
+    );
   }
 
   goToBackmenu() {

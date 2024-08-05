@@ -23,6 +23,7 @@ export class AddproductComponent {
     this.productForm = this.fb.group({
       image: [null,Validators.required],
       name: [null, Validators.required],
+      costPriceHeader:[null, Validators.required],
       wholesalePrice: [null, Validators.required],
       retailPrice: [null, Validators.required],
       stock: [null, Validators.required]

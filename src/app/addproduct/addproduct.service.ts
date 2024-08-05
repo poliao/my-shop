@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AddproductService {
+ 
 
   private apiUrl = 'https://api.bytescale.com/v2/accounts/FW25c9q/uploads/form_data';
   private apiKey = 'public_FW25c9qBE672spLDRBXUvVFTXpN8';

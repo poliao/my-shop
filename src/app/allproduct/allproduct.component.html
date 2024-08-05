@@ -1,69 +1,55 @@
 <section class="background-radial-gradient overflow-hidden d-flex justify-content-center" style="height: 100vh;">
-    <div class="container mt-5  overflow-auto" style="height:90%">
-        <div class="row header-row amt-2 ">
+    <div class="container mt-5 overflow-auto" style="max-height:85%;">
+        <div></div>
+        <div class="row header-row mt-2">
             <div class="row mt-2">
                 <div class="col-sm-2">
-                    <input type="text" readonly class="form-control text-center" id="productCodeHeFader"
-                        value="รหัสสินค้า">
+                    <input type="text" readonly class="form-control text-center" id="productCodeHeader" value="รหัสสินค้า">
                 </div>
                 <div class="col-sm-2">
-                    <input type="text" readonly class="form-control text-center" id="productNameHeader"
-                        value="ชื่อสินค้า">
+                    <input type="text" readonly class="form-control text-center" id="productNameHeader" value="ชื่อสินค้า">
                 </div>
                 <div class="col-sm-2">
                     <input type="text" readonly class="form-control text-center" id="quantityHeader" value="จำนวน">
                 </div>
                 <div class="col-sm-2">
-                    <input type="text" readonly class="form-control text-center" id="costPriceHeader"
-                        value="ราคาต้นทุน">
+                    <input type="text" readonly class="form-control text-center" id="costPriceHeader" value="ราคาต้นทุน">
                 </div>
                 <div class="col-sm-2">
-                    <input type="text" readonly class="form-control text-center" id="salePriceHeader"
-                        value="ราคาขายส่ง">
+                    <input type="text" readonly class="form-control text-center" id="salePriceHeader" value="ราคาขายส่ง">
                 </div>
                 <div class="col-sm-2">
-                    <input type="text" readonly class="form-control text-center" id="salePriceHeader"
-                        value="ราคาขายปลีก">
+                    <input type="text" readonly class="form-control text-center" id="salePriceHeader" value="ราคาขายปลีก">
                 </div>
             </div>
-
         </div>
         <div class="row mt-5">
-            <div *ngFor="let product of products" class="row mt-1 ">
+            <div *ngFor="let product of products" class="row mt-1">
                 <div class="col-sm-2">
-                    <input type="text" readonly class="form-control text-center" [id]="'productCode' + product.id"
-                        [value]="product.id">
+                    <input [ngClass]="{'red-background': product.stock < 11}" type="text" readonly class="form-control text-center"   [id]="'productCode' + product.id" [value]="product.id">
                 </div>
                 <div class="col-sm-2">
-                    <input type="text" readonly class="form-control " [id]="'productName' + product.id"
-                        [value]="product.name">
+                    <input [ngClass]="{'red-background': product.stock < 11}" type="text" readonly class="form-control" [id]="'productName' + product.id" [value]="product.name">
                 </div>
                 <div class="col-sm-2">
-                    <input type="text" readonly class="form-control text-center" [id]="'quantity' + product.id"
-                        [value]="product.stock">
+                    <input [ngClass]="{'red-background': product.stock < 11}" type="text" readonly class="form-control text-center" [id]="'quantity' + product.id" [value]="product.stock">
                 </div>
                 <div class="col-sm-2">
-                    <input type="text" readonly class="form-control text-center" [id]="'costPrice' + product.id"
-                        [value]="product.costPrice">
+                    <input [ngClass]="{'red-background': product.stock < 11}" type="text" readonly class="form-control text-center" [id]="'costPriceHeader' + product.id" [value]="product.costPriceHeader">
                 </div>
                 <div class="col-sm-2">
-                    <input type="text" readonly class="form-control text-center" [id]="'salePrice' + product.id"
-                        [value]="product.wholesalePrice">
+                    <input [ngClass]="{'red-background': product.stock < 11}" type="text" readonly class="form-control text-center" [id]="'salePrice' + product.id" [value]="product.wholesalePrice">
                 </div>
                 <div class="col-sm-2">
-                    <input type="text" readonly class="form-control text-center" [id]="'salePrice' + product.id"
-                        [value]="product.retailPrice">
+                    <input [ngClass]="{'red-background': product.stock < 11}" type="text" readonly class="form-control text-center" [id]="'salePrice' + product.id" [value]="product.retailPrice">
                 </div>
-            </div>
-            <div class="col-sm-1">
-                <img src="https://upcdn.io/FW25c9q/raw/icon/back-button.png" alt="Back" class="input-icon"
-                    (click)="goToBackmenu()">
             </div>
         </div>
-
-
         <div class="row mt-2">
-
+            <div class="col-sm-1">
+                <img src="https://upcdn.io/FW25c9q/raw/icon/back-button.png" alt="Back" class="input-icon" (click)="goToBackmenu()">
+            </div>
         </div>
     </div>
+    
 </section>

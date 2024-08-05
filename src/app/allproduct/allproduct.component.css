@@ -31,7 +31,11 @@
     background-color: white;
 }
 
-
+.red-background {
+    background-color: #ff0000 !important;
+    color: white;
+    border: #ff0000;
+}
 
 .row.mt-1.mb-1 {
     margin-top: 0 !important;
@@ -39,5 +43,8 @@
 }
 .input-icon{
     width: 50Px;
-    margin-left: 0px;
+    margin-left:0%;
+    position: fixed;
+    z-index: 1000;
+    bottom: 0;
 }
