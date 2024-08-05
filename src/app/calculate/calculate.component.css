@@ -1,0 +1,41 @@
+.background-radial-gradient {
+    background: linear-gradient(25deg, #FEE882, #F6488E);
+}
+
+.card {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.input-icon{
+    width: 50Px;
+    margin-left:0%;
+    position: fixed;
+    z-index: 1000;
+    bottom: 0;
+}
+.card img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+}
+.custom-btn {
+    background-color: #F6428F; /* Replace with your desired background color */
+    border-color: #F6428F; /* Replace with your desired border color */
+    color: white; /* Text color */
+    font-size: 20px;
+    width: 100%;
+    margin-left: 0px;
+    bottom: 0px;;
+     /* Optional: Set a maximum width to prevent the button from becoming too wide */
+}
+
+.card-body{
+    background: white;
+    border-radius: 10px;
+}

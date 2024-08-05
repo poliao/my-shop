@@ -69,8 +69,6 @@ export class AddproductComponent {
               this.selectedFile = null;
               this.imageSrc = null;
               this.showimg = false;
-
-
             },
               error => {
                 Swal.fire({
@@ -89,7 +87,6 @@ export class AddproductComponent {
             text: "กรุณากรอกฟอร์มให้ครบถ้วน!"
           });
         }
-
       }
     });
 

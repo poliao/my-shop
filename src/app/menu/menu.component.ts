@@ -24,4 +24,8 @@ export class MenuComponent {
   goToaddproduct(){
     this.router.navigate(['/addproduct']);
   }
+
+  goTocalculat(){
+    this.router.navigate(['/calculate']);
+  }
 }

@@ -1,0 +1,87 @@
+<section class="background-radial-gradient" style="height: 100vh;">
+    <div class="container" style="padding-top: 10px;">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="ค้นหา" aria-label="ค้นหา">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button">ค้นหา</button>
+                    </div>
+                </div>
+                <div class="overflow-auto" style="height: 85vh;">
+                    <div class="card" >
+                        <div class="row align-items-start"> <!-- Added align-items-start class -->
+                            <div class="col-md-3" *ngFor="let product of products; let i = index" style="padding: 10px;">
+                                <!-- Added padding-bottom -->
+                                <div class="card" (click)="onCardClick(products,i)">
+                                    <img class="card-img-top" [src]="product.image" alt="Product image">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ product.name }}</h5>
+                                        <p class="card-text">
+                                            รหัส: {{ product.id }}<br>
+                                            ราคา: {{ product.retailPrice }}<br>
+                                            คลัง: {{ product.stock }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-1">
+                    <img src="https://upcdn.io/FW25c9q/raw/icon/back-button.png" alt="Back" class="input-icon"
+                        (click)="goToBackmenu()">
+                </div>
+            </div>
+            <div class="col">
+                <div class="card-body">
+                    <div class="overflow-auto" style="height: 85vh;">
+                        <div class="card-header d-flex justify-content-between" style="padding: 10px;">
+                            <h4>รายการสินค้า</h4>
+                            <h4>ราคา</h4>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item" *ngFor="let item of cartItems">
+                                <div class="d-flex justify-content-between">
+                                    <div>{{ item.name }}</div>
+                                    <div>{{ item.retailPrice }}</div>
+                                </div>
+                            </li>
+                        </ul><br>
+                    </div>
+
+                    <div class="card-footer ">
+                        <div class="d-flex justify-content-between" style="padding: 10px;">
+                            <div>รวมทั้งหมด: </div>
+                            <!-- <h4>{{ total }}</h4> -->
+                        </div>
+                        <button class="btn btn-primary custom-btn" (click)="removeItemAtIndex()">ชำระเงิน</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Modal for input -->
+<div class="modal fade" id="inputModal" tabindex="-1" aria-labelledby="inputModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="inputModalLabel">Enter a Number</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="inputForm" (ngSubmit)="onSubmit()">
+                    <div class="mb-3">
+                        <label for="numberInput" class="form-label">กรอกจำนวนสินค้า (0-999)</label>
+                        <input type="number" id="numberInput" formControlName="numberInput" class="form-control" min="0"
+                            max="7" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

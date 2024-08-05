@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MenuComponent } from './menu/menu.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { AllproductComponent } from './allproduct/allproduct.component';
+import { CalculateComponent } from './calculate/calculate.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AllproductComponent } from './allproduct/allproduct.component';
     ChangepasswordComponent,
     MenuComponent,
     AddproductComponent,
-    AllproductComponent
+    AllproductComponent,
+    CalculateComponent
   ],
   imports: [
     BrowserModule,

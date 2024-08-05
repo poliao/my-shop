@@ -6,6 +6,7 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
 import { MenuComponent } from './menu/menu.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { AllproductComponent } from './allproduct/allproduct.component';
+import { CalculateComponent } from './calculate/calculate.component';
 
 const routes: Routes = [
   { path: '',  component: LoginComponent}, 
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'changepassword', component: ChangepasswordComponent},
   { path: 'menu', component: MenuComponent},
   { path: 'addproduct', component: AddproductComponent},
-  { path: 'allproduct', component: AllproductComponent}
+  { path: 'allproduct', component: AllproductComponent},
+  { path: 'calculate', component:CalculateComponent}
 
 
 ];
