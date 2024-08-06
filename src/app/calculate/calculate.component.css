@@ -7,6 +7,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    
 }
 .input-icon{
     width: 50Px;
@@ -19,6 +20,8 @@
     width: 150px;
     height: 150px;
     object-fit: contain;
+    margin: auto auto;
+    display: block; 
 }
 
 .input-group {
@@ -38,4 +41,5 @@
 .card-body{
     background: white;
     border-radius: 10px;
+    
 }

@@ -17,6 +17,7 @@ export class CalculateComponent implements OnInit {
   selectedProduct: any;
   numberInputValue: any[] = [];
   filteredProducts: any[] = [];
+  modalInstance: any;       
 
   constructor(private calculateservice: CalculateService,
     private router: Router,
@@ -48,8 +49,8 @@ export class CalculateComponent implements OnInit {
   showModal(): void {
     const modalElement = document.getElementById('inputModal');
     if (modalElement) {
-      const modal = new (window as any).bootstrap.Modal(modalElement);
-      modal.show();
+      this.modalInstance = new (window as any).bootstrap.Modal(modalElement);
+      this.modalInstance.show();
     } else {
       console.error('Modal element not found');
     }
@@ -71,6 +72,8 @@ export class CalculateComponent implements OnInit {
         if (!duplicateProduct) {
           this.selectedProduct.numberInput = this.numberInputValue;
           this.cartItems.push(this.selectedProduct);
+          if (this.modalInstance) {
+            this.modalInstance.hide();}
         } else {
           Swal.fire({
             icon: "error",

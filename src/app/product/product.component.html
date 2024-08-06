@@ -1,0 +1,33 @@
+<section class="background-radial-gradient overflow-hidden" style="height: 100vh;">
+    <div class="container mt-4">
+        <div class="row mb-3">
+            <div class="col">
+                <button class="btn btn-primary" (click)="addProduct()">เพิ่มสินค้า</button>
+            </div>
+            <div class="col">
+                <button class="btn btn-danger" (click)="removeProduct()">ลบสินค้า</button>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-12">
+                <div class="product-list">
+                    <div class="row" style="height: calc(100vh - 100px); overflow-y: auto;">
+                        <div class="col-md-4" *ngFor="let product of products; let i = index" style="padding: 10px;">
+                            <div class="card">
+                                <img class="card-img-top" [src]="product.image" alt="Product image">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ product.name }}</h5>
+                                    <p class="card-text">
+                                        รหัส: {{ product.code }}<br>
+                                        ราคา: {{ product.price }}<br>
+                                        คลัง: {{ product.stock }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

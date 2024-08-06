@@ -7,6 +7,7 @@ import { MenuComponent } from './menu/menu.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { AllproductComponent } from './allproduct/allproduct.component';
 import { CalculateComponent } from './calculate/calculate.component';
+import { ProductComponent } from './product/product.component';
 
 const routes: Routes = [
   { path: '',  component: LoginComponent}, 
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'menu', component: MenuComponent},
   { path: 'addproduct', component: AddproductComponent},
   { path: 'allproduct', component: AllproductComponent},
-  { path: 'calculate', component:CalculateComponent}
+  { path: 'calculate', component:CalculateComponent},
+  { path: 'product', component:ProductComponent}
 
 
 ];

@@ -12,6 +12,7 @@ import { MenuComponent } from './menu/menu.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { AllproductComponent } from './allproduct/allproduct.component';
 import { CalculateComponent } from './calculate/calculate.component';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CalculateComponent } from './calculate/calculate.component';
     MenuComponent,
     AddproductComponent,
     AllproductComponent,
-    CalculateComponent
+    CalculateComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
