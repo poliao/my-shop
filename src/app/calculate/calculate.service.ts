@@ -16,4 +16,12 @@ export class CalculateService {
   getAllProducts(): Observable<any> {
     return this.http.get<any>(this.apiUrl+'/api/products');
   }
+  
+  updateProductStock(productId: number, stock: number): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/api/products/${productId}`, { stock });
+  }
+  deleteProduct(productId: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/api/products/${productId}`);
+  }
+
 }
