@@ -1,0 +1,65 @@
+
+.background-radial-gradient {
+    background: linear-gradient(25deg, #FEE882, #F6488E);
+}
+
+.row.header-row input {
+    background-color: #F6428F;
+    border: #F6428F;
+    color: white;
+}
+
+.header-row input {
+    background-color: #ff6e7f;
+    color: white;
+    font-weight: bold;
+    padding-bottom: 10px; /* เพิ่มระยะห่างด้านล่างใน input */
+}
+.ip-header{
+    background-color: #F6428F;
+    border: #F6428F;
+    color: white;
+    height: 160%;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.header-row {
+    position: relative;
+    /* ระยะห่างระหว่างแถวกับข้อมูล */
+}
+
+.header-row::after {
+    content: "";
+    position: absolute;
+    bottom: -50%; /* ปรับตำแหน่งเส้นต่ำลง */
+    left: 0;
+    right: 0;
+    height: 5px;
+    background-color: white;
+}
+
+.red-background {
+    background-color: #ff0000 !important;
+    color: white;
+    border: #ff0000;
+}
+
+.row.mt-1.mb-1 {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+.input-icon{
+    width: 50Px;
+    margin-left:0%;
+    position: fixed;
+    z-index: 1000;
+    bottom: 0;
+}
+
+
+
+
+
+
+

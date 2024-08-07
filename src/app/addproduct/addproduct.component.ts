@@ -93,6 +93,6 @@ export class AddproductComponent {
   }
 
   goToBackmenu() {
-    this.router.navigate(['/menu']);
+    this.router.navigate(['/product']);
   }
 }

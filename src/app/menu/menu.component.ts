@@ -22,7 +22,11 @@ export class MenuComponent {
   }
 
   goToaddproduct(){
-    this.router.navigate(['/addproduct']);
+    this.router.navigate(['/product']);
+  }
+
+  goTohistorysale(){
+    this.router.navigate(['/historysale']);
   }
 
   goTocalculat(){

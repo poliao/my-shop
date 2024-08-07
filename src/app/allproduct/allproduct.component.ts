@@ -33,7 +33,8 @@ export class AllproductComponent implements OnInit {
   getAllProducts(): void {
     this.allproductservice.getAllProducts().subscribe(
       (data) => {
-        this.products = data;
+        
+        this.products = data.sort((a: any, b: any) => a.id - b.id);
       }
     );
   }

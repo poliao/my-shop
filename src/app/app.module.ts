@@ -13,6 +13,7 @@ import { AddproductComponent } from './addproduct/addproduct.component';
 import { AllproductComponent } from './allproduct/allproduct.component';
 import { CalculateComponent } from './calculate/calculate.component';
 import { ProductComponent } from './product/product.component';
+import { HistorysaleComponent } from './historysale/historysale.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ProductComponent } from './product/product.component';
     AddproductComponent,
     AllproductComponent,
     CalculateComponent,
-    ProductComponent
+    ProductComponent,
+    HistorysaleComponent
   ],
   imports: [
     BrowserModule,

@@ -1,29 +1,31 @@
 <section class="background-radial-gradient overflow-hidden d-flex justify-content-center" style="height: 100vh;">
-    <div class="container mt-5 overflow-auto" style="max-height:85%;">
-        <div></div>
-        <div class="row header-row mt-2">
+    <div class="container mt-5" >
+        
+        <div class="row header-row mt-2" >
             <div class="row mt-2">
-                <div class="col-sm-2">
-                    <input type="text" readonly class="form-control text-center" id="productCodeHeader" value="รหัสสินค้า">
-                </div>
-                <div class="col-sm-2">
-                    <input type="text" readonly class="form-control text-center" id="productNameHeader" value="ชื่อสินค้า">
-                </div>
-                <div class="col-sm-2">
-                    <input type="text" readonly class="form-control text-center" id="quantityHeader" value="จำนวน">
-                </div>
-                <div class="col-sm-2">
-                    <input type="text" readonly class="form-control text-center" id="costPriceHeader" value="ราคาต้นทุน">
-                </div>
-                <div class="col-sm-2">
-                    <input type="text" readonly class="form-control text-center" id="salePriceHeader" value="ราคาขายส่ง">
-                </div>
-                <div class="col-sm-2">
-                    <input type="text" readonly class="form-control text-center" id="salePriceHeader" value="ราคาขายปลีก">
+                <div class="row mt-2">
+                    <div class="col-sm-2">
+                        <input type="text" readonly class="form-control text-center" id="productCodeHeader" value="รหัสสินค้า">
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="text" readonly class="form-control text-center" id="productNameHeader" value="ชื่อสินค้า">
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="text" readonly class="form-control text-center" id="quantityHeader" value="จำนวน">
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="text" readonly class="form-control text-center" id="costPriceHeader" value="ราคาต้นทุน">
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="text" readonly class="form-control text-center" id="salePriceHeader" value="ราคาขายส่ง">
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="text" readonly class="form-control text-center" id="salePriceHeader" value="ราคาขายปลีก">
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="row mt-5">
+        <div class="row mt-5 overflow-auto" style="max-height:80%;">
             <div *ngFor="let product of products" class="row mt-1">
                 <div class="col-sm-2">
                     <input [ngClass]="{'red-background': product.stock < 11}" type="text" readonly class="form-control text-center"   [id]="'productCode' + product.id" [value]="product.id">

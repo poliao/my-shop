@@ -1,33 +1,84 @@
 <section class="background-radial-gradient overflow-hidden" style="height: 100vh;">
-    <div class="container mt-4">
-        <div class="row mb-3">
-            <div class="col">
-                <button class="btn btn-primary" (click)="addProduct()">เพิ่มสินค้า</button>
-            </div>
-            <div class="col">
-                <button class="btn btn-danger" (click)="removeProduct()">ลบสินค้า</button>
-            </div>
-        </div><br>
-        <div class="row">
-            <div class="col-12">
-                <div class="product-list">
-                    <div class="row" style="height: calc(100vh - 100px); overflow-y: auto;">
-                        <div class="col-md-4" *ngFor="let product of products; let i = index" style="padding: 10px;">
-                            <div class="card">
-                                <img class="card-img-top" [src]="product.image" alt="Product image">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ product.name }}</h5>
-                                    <p class="card-text">
-                                        รหัส: {{ product.code }}<br>
-                                        ราคา: {{ product.price }}<br>
-                                        คลัง: {{ product.stock }}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+  <div class="container mt-4">
+    <div class="row mb-3">
+      <div class="col">
+        <button class="btn-1" (click)="addProduct()">เพิ่มสินค้า</button>
+      </div>
+    </div><br>
+    <div class="row">
+      <div class="col-12">
+        <div class="product-list">
+          <div class="row" style="height: calc(100vh - 100px); overflow-y: auto;">
+            <div class="col-md-4" *ngFor="let product of filteredProducts; let i = index" style="padding: 10px;">
+              <div class="card" (click)="onCardClick(product, i)">
+                <img class="card-img-top" [src]="product.image" alt="Product image">
+                <div class="card-body">
+                  <h5 class="card-title">{{ product.name }}</h5>
+                  <p class="card-text">
+                    รหัส: {{ product.id }}<br>
+                    ราคา: {{ product.retailPrice }}<br>
+                    คลัง: {{ product.stock }}
+                  </p>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+    <img src="https://upcdn.io/FW25c9q/raw/icon/back-button.png" alt="Back" class="input-icon" (click)="goToBackmenu()">
+  </div>
+
+  <div class="modal fade" id="inputModal" tabindex="-1" aria-labelledby="inputModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 800px;">
+      <div class="modal-content" style="height: 80vh;">
+        <div class="modal-body">
+          <div class="row h-100">
+            <div class="col-md-6 d-flex justify-content-center align-items-center">
+              <img [src]="selectedProduct?.image" alt="Product image" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+              <div class="card-detail">
+                <form [formGroup]="inputForm">
+                  <div style="padding: 19px;">
+                    <div class="form-group row mb-3">
+                      <label for="productName" class="col-sm-4 col-form-label">ชื่อสินค้า</label>
+                      <div class="col-sm-8">
+                        <input type="text" style="color:#D9D9D9 ;" id="productName" class="form-control"  formControlName="name" readonly>
+                      </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                      <label for="productCode" class="col-sm-4 col-form-label">รหัส</label>
+                      <div class="col-sm-8">
+                        <input type="text" style="color:#D9D9D9 ;" id="productCode" class="form-control" formControlName="id" readonly>
+                      </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                      <label for="productPrice" class="col-sm-4 col-form-label">ราคา</label>
+                      <div class="col-sm-8">
+                        <input type="text" id="productPrice" class="form-control" formControlName="retailPrice">
+                      </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                      <label for="productStock" class="col-sm-4 col-form-label">คลัง</label>
+                      <div class="col-sm-8">
+                        <input type="text" id="productStock" class="form-control" formControlName="stock">
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            
+            
+            
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-popup" data-bs-dismiss="modal" (click)="deleteProduct()">delete</button>
+          <button type="button" class="btn-popup" (click)="updateProduct()">บันทึกข้อมูล</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

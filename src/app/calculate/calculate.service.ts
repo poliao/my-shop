@@ -18,10 +18,12 @@ export class CalculateService {
   }
   
   updateProductStock(productId: number, stock: number): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}/api/products/${productId}`, { stock });
+    return this.http.put<any>(`${this.apiUrl}/api/products/${productId}/update-stock`, { stock } );
   }
   deleteProduct(productId: number): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}/api/products/${productId}`);
   }
-
+  saveHistory(FormData: any): Observable<any> {
+    return this.http.post(this.apiUrl+'/api/sales', FormData);
+  }
 }

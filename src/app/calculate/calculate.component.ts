@@ -17,7 +17,8 @@ export class CalculateComponent implements OnInit {
   selectedProduct: any;
   numberInputValue: any[] = [];
   filteredProducts: any[] = [];
-  modalInstance: any;       
+  modalInstance: any;
+
 
   constructor(private calculateservice: CalculateService,
     private router: Router,
@@ -67,7 +68,7 @@ export class CalculateComponent implements OnInit {
     if (this.inputForm) {
       if (this.selectedProduct) {
         this.numberInputValue = this.inputForm.get('numberInput')?.value;
-        // ตรวจสอบว่ามีสินค้าที่มีชื่อเดียวกันใน cartItems หรือไม่
+        this.inputForm.get('numberInput')?.reset();
         const duplicateProduct = this.cartItems.find(item => item.name === this.selectedProduct.name);
         if (!duplicateProduct) {
           this.selectedProduct.numberInput = this.numberInputValue;
@@ -136,18 +137,21 @@ export class CalculateComponent implements OnInit {
 
   updateProduct(): void {
     this.cartItems.forEach(item => {
+      
       const productInStock = this.products.find(product => product.id === item.id);
       if (productInStock) {
         const updatedStock = productInStock.stock - item.numberInput;
       console.log(`Updated stock for product ID ${item.id}:`, updatedStock);
-      
+        
         this.calculateservice.updateProductStock(item.id, updatedStock).subscribe(
           response => {
-            console.log(`Product stock updated successfully for product ID ${item.id}:`, response);
-            location.reload()
+            this.calculateservice.saveHistory({productID: item.id, quantity: item.numberInput, salePrice: item.retailPrice, costPriceHeader: item.costPriceHeader}).subscribe();
+            Swal.fire('success', 'ชำระเงินสำเร็จ!', 'success');
+            this.cartItems.forEach(item => {this.cartItems = []});
+            this.getAllProducts();
           },
           error => {
-            console.error(`Error updating product stock for product ID ${item.id}:`, error);
+          console.error(`Error updating product stock for product ID ${item.id}:`, error);
           }
         );
       }

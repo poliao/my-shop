@@ -1,0 +1,89 @@
+<section class="background-radial-gradient overflow-hidden d-flex justify-content-center" style="height: 100vh;">
+    <div class="container mt-5" >
+        
+        <div class="row header-row mt-2">
+            <div class="row mt-2">
+                <div class="row mt-2">
+                    <div class="col-sm-2">
+                        <select class="form-control text-center " style="background-color: #F6428F; border: #F6428F; color: white;" id="yearSelect"  [(ngModel)]="selectedYear" (ngModelChange)="submitFilters()" >
+                            <option value="">เลือกปี</option>
+                            <!-- เพิ่มตัวเลือกปี -->
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <!-- เพิ่มปีเพิ่มเติมตามต้องการ -->
+                        </select>
+                    </div>
+                    <div class="col-sm-2">
+                        <select class="form-control text-center"  style="background-color: #F6428F; border: #F6428F; color: white;"id="monthSelect"  [(ngModel)]="selectedMonth" (ngModelChange)="submitFilters()">
+                            <option value="">เลือกเดือน</option>
+                            <option value="01">มกราคม</option>
+                            <option value="02">กุมภาพันธ์</option>
+                            <option value="03">มีนาคม</option>
+                            <option value="04">เมษายน</option>
+                            <option value="05">พฤษภาคม</option>
+                            <option value="06">มิถุนายน</option>
+                            <option value="07">กรกฎาคม</option>
+                            <option value="08">สิงหาคม</option>
+                            <option value="09">กันยายน</option>
+                            <option value="10">ตุลาคม</option>
+                            <option value="11">พฤศจิกายน</option>
+                            <option value="12">ธันวาคม</option>
+                        </select>
+                    </div>     
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="row mt-2">
+                <div class="col-sm-2">
+                    <input type="text" readonly class="ip-header text-center" id="productCodeHeader" value="รหัสสินค้า">
+                </div>
+                <div class="col-sm-2">
+                    <input type="text" readonly class="ip-header  text-center" id="productNameHeader" value="ชื่อสินค้า">
+                </div>
+                <div class="col-sm-2">
+                    <input type="text" readonly class="ip-header  text-center" id="quantityHeader" value="จำนวน">
+                </div>
+                <div class="col-sm-2">
+                    <input type="text" readonly class="ip-header  text-center" id="costPriceHeader" value="ราคาต้นทุน">
+                </div>
+                <div class="col-sm-2">
+                    <input type="text" readonly class="ip-header  text-center" id="salePriceHeader" value="ราคาขาย">
+                </div>
+                <div class="col-sm-2">
+                    <input type="text" readonly class="ip-header  text-center" id="salePriceHeader" value="กำไร">
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5 overflow-auto" style="max-height:80%;">
+            <div *ngFor="let product of products" class="row mt-1">
+                <div class="col-sm-2">
+                    <input [ngClass]="{'red-background': product.stock < 11}" type="text" readonly class="form-control text-center"   [id]="'productCode' + product.id" [value]="product.productId">
+                </div>
+                <div class="col-sm-2">
+                    <input [ngClass]="{'red-background': product.stock < 11}" type="text" readonly class="form-control" [id]="'productName' + product.id" [value]="product.productName">
+                </div>
+                <div class="col-sm-2">
+                    <input [ngClass]="{'red-background': product.stock < 11}" type="text" readonly class="form-control text-center" [id]="'quantity' + product.id" [value]="product.totalQuantity">
+                </div>
+                <div class="col-sm-2">
+                    <input [ngClass]="{'red-background': product.stock < 11}" type="text" readonly class="form-control text-center" [id]="'costPriceHeader' + product.id" [value]="product.costPriceHeader">
+                </div>
+                <div class="col-sm-2">
+                    <input [ngClass]="{'red-background': product.stock < 11}" type="text" readonly class="form-control text-center" [id]="'salePrice' + product.id" [value]="product.retailPrice">
+                </div>
+                <div class="col-sm-2">
+                    <input [ngClass]="{'red-background': product.stock < 11}" type="text" readonly class="form-control text-center" [id]="'salePrice' + product.id" [value]="product.retailPrice*product.totalQuantity-product.costPriceHeader*product.totalQuantity">
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-sm-1">
+                <img src="https://upcdn.io/FW25c9q/raw/icon/back-button.png" alt="Back" class="input-icon" (click)="goToBackmenu()">
+            </div>
+        </div>
+    </div>
+    
+</section>
