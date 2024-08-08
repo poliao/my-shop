@@ -23,6 +23,7 @@ export class AddproductComponent implements OnInit{
     this.productForm = this.fb.group({
       image: [null,Validators.required],
       name: [null, Validators.required],
+      id: [null, Validators.required],
       costPriceHeader:[null, Validators.required],
       wholesalePrice: [null, Validators.required],
       retailPrice: [null, Validators.required],
@@ -77,7 +78,7 @@ export class AddproductComponent implements OnInit{
                 Swal.fire({
                   icon: "error",
                   title: "Oops...",
-                  text: "กรุณากรอกฟอร์มให้ครบถ้วน!"
+                  text: "กรุณากรอกฟอร์มให้ครบถ้วน! หรือ ID ซ้ำกัน"
                 });
                 console.error('Login failed', error);
               })
