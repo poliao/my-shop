@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AddproductService } from './addproduct.service';
@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
   templateUrl: './addproduct.component.html',
   styleUrls: ['./addproduct.component.css']
 })
-export class AddproductComponent {
+export class AddproductComponent implements OnInit{
   productForm: FormGroup;
   imageSrc: string | ArrayBuffer | null = null;
   showimg: boolean = false;
@@ -28,6 +28,9 @@ export class AddproductComponent {
       retailPrice: [null, Validators.required],
       stock: [null, Validators.required]
     });
+  }
+  ngOnInit(): void {
+    this.checkToken()
   }
 
   onFileSelected(event: Event): void {
@@ -91,7 +94,13 @@ export class AddproductComponent {
     });
 
   }
-
+  checkToken() {
+    const token = localStorage.getItem('authToken');
+    if (!token) {
+      // หากไม่มี token, ให้ redirect ไปยังหน้า login
+      this.router.navigate(['/login']);
+    }
+  }
   goToBackmenu() {
     this.router.navigate(['/product']);
   }

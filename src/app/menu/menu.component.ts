@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
-export class MenuComponent {
+export class MenuComponent implements OnInit {
 
 
 
@@ -16,6 +16,9 @@ export class MenuComponent {
   
     
   ) {}
+  ngOnInit(): void {
+    this.checkToken()
+  }
   
   goToallproduct(){
     this.router.navigate(['/allproduct']);
@@ -31,5 +34,13 @@ export class MenuComponent {
 
   goTocalculat(){
     this.router.navigate(['/calculate']);
+  }
+
+  checkToken() {
+    const token = localStorage.getItem('authToken');
+    if (!token) {
+      // หากไม่มี token, ให้ redirect ไปยังหน้า login
+      this.router.navigate(['/login']);
+    }
   }
 }

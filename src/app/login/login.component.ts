@@ -25,7 +25,7 @@ export class LoginComponent {
     this.loginService.login(this.username, this.password).subscribe(
       response => {
         console.log('Login successful', response);
-        // ทำการนำทางไปยังหน้าที่ต้องการหลังจากล็อกอินสำเร็จ
+        localStorage.setItem('authToken', response.token);
         Swal.fire('Hi', 'We have been informed!', 'success');
         this.router.navigate(['/menu']);
       },

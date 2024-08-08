@@ -20,6 +20,7 @@ export class HistorysaleComponent {
 
   ngOnInit(): void {
     this.submitFilters();
+    this.checkToken()
   }
 
   editProduct(product: any) {
@@ -32,6 +33,9 @@ export class HistorysaleComponent {
     // Add your delete logic here
   }
 
+  getMaxTotalQuantity(): number {
+    return Math.max(...this.products.map(product => product.totalQuantity));
+  }
   
   submitFilters(): void {
       this.historySaleService.getSaleSummary(Number(this.selectedMonth), Number(this.selectedYear)).subscribe(
@@ -46,7 +50,13 @@ export class HistorysaleComponent {
     
   }
   
-
+  checkToken() {
+    const token = localStorage.getItem('authToken');
+    if (!token) {
+      // หากไม่มี token, ให้ redirect ไปยังหน้า login
+      this.router.navigate(['/login']);
+    }
+  }
   goToBackmenu() {
     this.router.navigate(['/menu']);
   }

@@ -10,8 +10,9 @@
     color: rgb(0, 0, 0);
     /* Text color */
     font-size: 20px;
-    width: 120%;
-    margin-left: -10%;
+    width: 200%;
+    height: 50px;
+    margin-left: -50%;
     /* Increase width to your preference */
    
     /* Optional: Set a maximum width to prevent the button from becoming too wide */

@@ -18,6 +18,7 @@ export class AllproductComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllProducts();
+    this.checkToken()
   }
 
   editProduct(product: any) {
@@ -37,6 +38,13 @@ export class AllproductComponent implements OnInit {
         this.products = data.sort((a: any, b: any) => a.id - b.id);
       }
     );
+  }
+  checkToken() {
+    const token = localStorage.getItem('authToken');
+    if (!token) {
+      // หากไม่มี token, ให้ redirect ไปยังหน้า login
+      this.router.navigate(['/login']);
+    }
   }
 
   goToBackmenu() {

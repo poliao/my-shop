@@ -60,24 +60,25 @@
         <div class="row mt-5 overflow-auto" style="max-height:80%;">
             <div *ngFor="let product of products" class="row mt-1">
                 <div class="col-sm-2">
-                    <input [ngClass]="{'red-background': product.stock < 11}" type="text" readonly class="form-control text-center"   [id]="'productCode' + product.id" [value]="product.productId">
+                    <input [ngClass]="{'red-background': product.stock < 11, 'green-background': product.totalQuantity === getMaxTotalQuantity()}" type="text" readonly class="form-control text-center" [id]="'productCode' + product.id" [value]="product.productId">
                 </div>
                 <div class="col-sm-2">
-                    <input [ngClass]="{'red-background': product.stock < 11}" type="text" readonly class="form-control" [id]="'productName' + product.id" [value]="product.productName">
+                    <input [ngClass]="{'red-background': product.stock < 11, 'green-background': product.totalQuantity === getMaxTotalQuantity()}" type="text" readonly class="form-control" [id]="'productName' + product.id" [value]="product.productName">
                 </div>
                 <div class="col-sm-2">
-                    <input [ngClass]="{'red-background': product.stock < 11}" type="text" readonly class="form-control text-center" [id]="'quantity' + product.id" [value]="product.totalQuantity">
+                    <input [ngClass]="{'red-background': product.stock < 11, 'green-background': product.totalQuantity === getMaxTotalQuantity()}" type="text" readonly class="form-control text-center" [id]="'quantity' + product.id" [value]="product.totalQuantity">
                 </div>
                 <div class="col-sm-2">
-                    <input [ngClass]="{'red-background': product.stock < 11}" type="text" readonly class="form-control text-center" [id]="'costPriceHeader' + product.id" [value]="product.costPriceHeader">
+                    <input [ngClass]="{'red-background': product.stock < 11, 'green-background': product.totalQuantity === getMaxTotalQuantity()}" type="text" readonly class="form-control text-center" [id]="'costPriceHeader' + product.id" [value]="product.costPriceHeader">
                 </div>
                 <div class="col-sm-2">
-                    <input [ngClass]="{'red-background': product.stock < 11}" type="text" readonly class="form-control text-center" [id]="'salePrice' + product.id" [value]="product.retailPrice">
+                    <input [ngClass]="{'red-background': product.stock < 11, 'green-background': product.totalQuantity === getMaxTotalQuantity()}" type="text" readonly class="form-control text-center" [id]="'salePrice' + product.id" [value]="product.retailPrice">
                 </div>
                 <div class="col-sm-2">
-                    <input [ngClass]="{'red-background': product.stock < 11}" type="text" readonly class="form-control text-center" [id]="'salePrice' + product.id" [value]="product.retailPrice*product.totalQuantity-product.costPriceHeader*product.totalQuantity">
+                    <input [ngClass]="{'red-background': product.stock < 11, 'green-background': product.totalQuantity === getMaxTotalQuantity()}" type="text" readonly class="form-control text-center" [id]="'salePrice' + product.id" [value]="product.retailPrice * product.totalQuantity - product.costPriceHeader * product.totalQuantity">
                 </div>
             </div>
+            
         </div>
         <div class="row mt-2">
             <div class="col-sm-1">

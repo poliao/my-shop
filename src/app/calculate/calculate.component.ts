@@ -32,6 +32,7 @@ export class CalculateComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllProducts()
+    this.checkToken()
   }
 
   removeItemAtIndex(): void {
@@ -158,6 +159,13 @@ export class CalculateComponent implements OnInit {
     });
   }
 
+  checkToken() {
+    const token = localStorage.getItem('authToken');
+    if (!token) {
+      // หากไม่มี token, ให้ redirect ไปยังหน้า login
+      this.router.navigate(['/login']);
+    }
+  }
   maxStockValidator(control: AbstractControl): { [key: string]: any } | null {
     if (this.selectedProduct && control.value > this.selectedProduct.stock) {
       return { maxStock: true };

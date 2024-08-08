@@ -31,6 +31,7 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllProducts();
+    this.checkToken();
   }
 
   addProduct() {
@@ -102,7 +103,13 @@ export class ProductComponent implements OnInit {
     )
   }
 
-
+  checkToken() {
+    const token = localStorage.getItem('authToken');
+    if (!token) {
+      // หากไม่มี token, ให้ redirect ไปยังหน้า login
+      this.router.navigate(['/login']);
+    }
+  }
 
   goToBackmenu() {
     this.router.navigate(['/menu']);

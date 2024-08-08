@@ -24,6 +24,12 @@
     border-radius: 5px;
 }
 
+.green-background {
+    background-color: #00ff40 !important;
+    color: rgb(0, 0, 0);
+    border: #00ff40;
+    
+}
 .header-row {
     position: relative;
     /* ระยะห่างระหว่างแถวกับข้อมูล */

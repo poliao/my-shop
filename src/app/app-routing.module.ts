@@ -12,6 +12,7 @@ import { HistorysaleComponent } from './historysale/historysale.component';
 
 const routes: Routes = [
   { path: '',  component: LoginComponent}, 
+  { path: 'login', component: LoginComponent},
   { path: 'forgotpassword', component: ForgotpasswordComponent},
   { path: 'changepassword', component: ChangepasswordComponent},
   { path: 'menu', component: MenuComponent},
