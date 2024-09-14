@@ -8,22 +8,18 @@ import { Observable } from 'rxjs';
 export class AddproductService {
  
 
-  private apiUrl = 'https://api.bytescale.com/v2/accounts/FW25c9q/uploads/form_data';
-  private apiKey = 'public_FW25c9qBE672spLDRBXUvVFTXpN8';
-  private apisavebase = 'http://localhost:8080/api/products'
+  private apiUploadUrl = 'http://localhost:8080/api/products/upload'; // เปลี่ยนเป็น URL ใหม่
+  private apisavebase = 'http://localhost:8080/api/products';
   private apicheckbase = 'http://localhost:8080/api/products/check-name';
-
 
   constructor(private http: HttpClient) { }
 
+  // อัปโหลดไฟล์ไปยัง API ใหม่
   uploadImage(file: File): Observable<any> {
     const formData = new FormData();
-    formData.append('file', file);
+    formData.append('files', file); // ชื่อฟิลด์ควรตรงกับ @RequestParam ใน Backend
 
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${this.apiKey}`
-    });
-    return this.http.post(this.apiUrl, formData, { headers });
+    return this.http.post(this.apiUploadUrl, formData); // ไม่ต้องใช้ Headers
   }
 
   checkProductName(name: string): Observable<boolean> {

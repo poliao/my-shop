@@ -65,7 +65,7 @@ export class AddproductComponent implements OnInit{
       } else {
         if (this.productForm.valid && this.selectedFile) {
           this.addproductService.uploadImage(this.selectedFile).subscribe(response => {
-            this.imageSrc = response.files[0].fileUrl;
+            this.imageSrc = response.fileUrls[0];
             this.productForm.patchValue({ image: this.imageSrc });
             this.addproductService.save(this.productForm.value).subscribe(response => {
               Swal.fire('Hi', 'We have been informed!', 'success');

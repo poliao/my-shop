@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 import emailjs from 'emailjs-com';
 import Swal from 'sweetalert2';
 import { ForgotpasswordService } from './forgotpassword.service';
+ 
+// npm install emailjs-com ติดตั้งemailjs-com
+
 
 @Component({
   selector: 'app-forgotpassword',
