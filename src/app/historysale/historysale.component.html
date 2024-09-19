@@ -5,7 +5,7 @@
             <div class="row mt-2">
                 <div class="row mt-2">
                     <div class="col-sm-2">
-                        <select class="form-control text-center " style="background-color: #F6428F; border: #F6428F; color: white;" id="yearSelect"  [(ngModel)]="selectedYear" (ngModelChange)="submitFilters()" >
+                        <select class="form-control text-center " style="background-color: #F6428F;border: 2px solid white; color: white;" id="yearSelect"  [(ngModel)]="selectedYear" (ngModelChange)="submitFilters()" >
                             <option value="">เลือกปี</option>
                             <!-- เพิ่มตัวเลือกปี -->
                             <option value="2023">2023</option>
@@ -15,7 +15,7 @@
                         </select>
                     </div>
                     <div class="col-sm-2">
-                        <select class="form-control text-center"  style="background-color: #F6428F; border: #F6428F; color: white;"id="monthSelect"  [(ngModel)]="selectedMonth" (ngModelChange)="submitFilters()">
+                        <select class="form-control text-center"  style="background-color: #F6428F; border: 2px solid white; color: white;"id="monthSelect"  [(ngModel)]="selectedMonth" (ngModelChange)="submitFilters()">
                             <option value="">เลือกเดือน</option>
                             <option value="01">มกราคม</option>
                             <option value="02">กุมภาพันธ์</option>

@@ -68,7 +68,7 @@ export class AddproductComponent implements OnInit{
             this.imageSrc = response.fileUrls[0];
             this.productForm.patchValue({ image: this.imageSrc });
             this.addproductService.save(this.productForm.value).subscribe(response => {
-              Swal.fire('Hi', 'We have been informed!', 'success');
+              Swal.fire('บันทึกสินค้า', 'บันทึกสินค้าเรียบร้อย!', 'success');
               this.productForm.reset();
               this.selectedFile = null;
               this.imageSrc = null;
