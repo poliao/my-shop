@@ -100,6 +100,7 @@ export class CalculateComponent implements OnInit {
     this.showModal();
   }
 
+
   getAllProducts(): void {
     this.calculateservice.getAllProducts().subscribe(
       (data) => {

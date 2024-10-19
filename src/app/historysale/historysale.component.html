@@ -1,5 +1,5 @@
 <section class="background-radial-gradient overflow-hidden d-flex justify-content-center" style="height: 100vh;">
-    <div class="container mt-5" >
+    <div class="container mt-5 overflow-auto" style="max-height:90%;" >
         
         <div class="row header-row mt-2">
             <div class="row mt-2">
@@ -36,6 +36,7 @@
         </div>
         <br><br>
         <div class="row">
+           
             <div class="row mt-2">
                 <div class="col-sm-2">
                     <input type="text" readonly class="ip-header text-center" id="productCodeHeader" value="รหัสสินค้า">
@@ -57,8 +58,9 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-5 overflow-auto" style="max-height:80%;">
-            <div *ngFor="let product of products" class="row mt-1">
+        <div class="row mt-5 " >
+            <div *ngFor="let product of products" class="row mt-1" >
+               
                 <div class="col-sm-2">
                     <input [ngClass]="{'red-background': product.stock < 11, 'green-background': product.totalQuantity === getMaxTotalQuantity()}" type="text" readonly class="form-control text-center" [id]="'productCode' + product.id" [value]="product.productId">
                 </div>
@@ -75,10 +77,9 @@
                     <input [ngClass]="{'red-background': product.stock < 11, 'green-background': product.totalQuantity === getMaxTotalQuantity()}" type="text" readonly class="form-control text-center" [id]="'salePrice' + product.id" [value]="product.retailPrice">
                 </div>
                 <div class="col-sm-2">
-                    <input [ngClass]="{'red-background': product.stock < 11, 'green-background': product.totalQuantity === getMaxTotalQuantity()}" type="text" readonly class="form-control text-center" [id]="'salePrice' + product.id" [value]="product.retailPrice * product.totalQuantity - product.costPriceHeader * product.totalQuantity">
+                    <input [ngClass]="{'red-background': product.stock < 11, 'green-background': product.totalQuantity === getMaxTotalQuantity()}" type="text" readonly class="form-control text-center" [id]="'salePrice' + product.id" [value]="product.totalProfit">
                 </div>
             </div>
-            
         </div>
         <div class="row mt-2">
             <div class="col-sm-1">

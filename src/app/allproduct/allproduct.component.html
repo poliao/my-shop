@@ -1,34 +1,35 @@
 <section class="background-radial-gradient overflow-hidden d-flex justify-content-center" style="height: 100vh;">
-    <div class="container mt-5">
 
+    <div class="container mt-5 overflow-auto" style="height: 90%;">
         <div class="row header-row mt-2">
             <div class="row mt-2">
                 <div class="col-sm-2">
                     <input type="text" readonly class="form-control text-center" id="productCodeHeader"
-                        value="รหัสสินค้า">
+                        style="border: 2px solid white;" value="รหัสสินค้า">
                 </div>
                 <div class="col-sm-2">
                     <input type="text" readonly class="form-control text-center" id="productNameHeader"
-                        value="ชื่อสินค้า">
+                        style="border: 2px solid white;" value="ชื่อสินค้า">
                 </div>
                 <div class="col-sm-2">
-                    <input type="text" readonly class="form-control text-center" id="quantityHeader" value="จำนวน">
+                    <input type="text" readonly class="form-control text-center" id="quantityHeader" value="จำนวน"
+                        style="border: 2px solid white;">
                 </div>
                 <div class="col-sm-2">
                     <input type="text" readonly class="form-control text-center" id="costPriceHeader"
-                        value="ราคาต้นทุน">
+                        style="border: 2px solid white;" value="ราคาต้นทุน">
                 </div>
                 <div class="col-sm-2">
                     <input type="text" readonly class="form-control text-center" id="salePriceHeader"
-                        value="ราคาขายส่ง">
+                        style="border: 2px solid white;" value="ราคาขายส่ง">
                 </div>
                 <div class="col-sm-2">
                     <input type="text" readonly class="form-control text-center" id="salePriceHeader"
-                        value="ราคาขายปลีก">
+                        style="border: 2px solid white;" value="ราคาขายปลีก">
                 </div>
             </div>
         </div>
-        <div class="row mt-5 overflow-auto" style="max-height:80%;">
+        <div class="row mt-5 " style="max-height:65%;">
             <div *ngFor="let product of products" class="row mt-1">
                 <div class="col-sm-2">
                     <input [ngClass]="{'red-background': product.stock < 11}" type="text" readonly
@@ -58,11 +59,16 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-2">
-            <div class="col-sm-1">
-                <img src="assets/img/icons8-back-arrow-50.png" alt="Back" class="input-icon" (click)="goToBackmenu()">
-            </div>
+
+
+    </div>
+
+
+    <div class="row mt-2">
+        <div class="col-sm-1">
+            <img src="assets/img/icons8-back-arrow-50.png" alt="Back" class="input-icon" (click)="goToBackmenu()">
         </div>
     </div>
+
 
 </section>
